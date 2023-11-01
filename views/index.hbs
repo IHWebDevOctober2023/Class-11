@@ -8,8 +8,29 @@
 </head>
 
 <body>
+    <nav>
+        <ul>
+            <li><a href="/about">ABOUT</a></li>
+            <li><a href="/contacts">CONTACTS</a></li>
+        </ul>
+    </nav>
     <h1>Hello world</h1>
     <h2>Log in</h2>
+    <p>Welcome {{name}}!</p>
+    <p>We know you are the {{role}}</p>
+    {{#if bootcamp}}
+    <p>Are you part of the {{{bootcamp}}} team?</p>
+    {{else}}
+    {{#unless isPaid}}
+    <p>Did you pay, {{name}}??? 😅</p>
+    {{/unless}}
+    {{/if}}
+    <ul>
+        {{#each favouriteFood}}
+        <li id="pokemon{{@index}}">{{@key}}: {{this.name}}</li>
+        <p>{{this.url}}</p>
+        {{/each}}
+    </ul>
     <form action="">
         <label for="">Name</label>
         <input type="text">
